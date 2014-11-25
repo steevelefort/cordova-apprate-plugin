@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="com.lefortsoftware.apprate"
+    version="0.1.0">
+    <name>AppRatePlugin</name>
+
+    <dependency id="org.apache.cordova.device"/>
+    <dependency id="org.apache.cordova.dialogs"/>
+    <dependency id="com.lefortsoftware.linksplugin" url="https://github.com/steevelefort/cordova-links-plugin" />
+
+    <!-- ios -->
+    <platform name="ios">    
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppRatePlugin">
+                <param name="ios-package" value="AppRatePlugin" />
+            </feature>
+        </config-file>
+        <js-module src="www/AppRatePlugin.js" name="AppRatePlugin">
+            <clobbers target="appRatePlugin" />
+        </js-module>
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.lefortsoftware.linksplugin"
+                      android:label="@string/app_name">
+                <intent-filter></intent-filter>
+            </activity>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="widget">
+            <feature name="AppRatePlugin">
+                <param name="android-package" value="com.lefortsoftware.apprate" />
+            </feature>
+        </config-file>
+        <js-module src="www/AppRatePlugin.js" name="AppRatePlugin">
+            <clobbers target="appRatePlugin" />
+        </js-module>
+    </platform>
+
+</plugin>
