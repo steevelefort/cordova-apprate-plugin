@@ -9,6 +9,12 @@ Works on iOS and Android
 In your Cordova project directory : 
 cordova plugin add https://github.com/steevelefort/cordova-apprate-plugin
 
+##DEPENDENCIES
+You must install these plugins too :
+com.lefortsoftware.linksplugin
+org.apache.cordova.device
+org.apache.cordova.dialogs
+
 ##USE IT
 
 	appRatePlugin.start({ 
