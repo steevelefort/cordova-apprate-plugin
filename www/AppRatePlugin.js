@@ -13,6 +13,8 @@ AppRatePlugin.prototype.start = function(options) {
     if (typeof options.ButtonLater == "undefined") { options.ButtonLater = "Remind me later"; }   
     if (typeof options.ButtonStop == "undefined") { options.ButtonStop = "No, thanks"; }   
 
+    alert(localStorage.getItem("count"+options.AppVersion));
+
     if (localStorage.getItem("count"+options.AppVersion) === null){
         localStorage.setItem("count"+options.AppVersion,1);
     } else {
